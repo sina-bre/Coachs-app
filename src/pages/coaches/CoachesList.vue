@@ -47,8 +47,18 @@ export default {
       const coaches = this.$store.getters['coaches/coaches'];
       return coaches.filter((coach) => {
         if (this.activeFilters.frontend && coach.areas.includes('frontend')) {
+          console.log('frontend');
           return true;
         }
+        if (this.activeFilters.backend && coach.areas.includes('backend')) {
+          console.log('backend');
+          return true;
+        }
+        if (this.activeFilters.career && coach.areas.includes('career')) {
+          console.log('career');
+          return true;
+        }
+        return false;
       });
     },
     hasCoaches() {
