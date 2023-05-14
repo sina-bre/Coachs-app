@@ -3,11 +3,18 @@
     <h3>{{ fulName }}</h3>
     <h4>${{ rate }}</h4>
     <div>
-      <span v-for="area in areas" :key="area">{{ area }}</span>
+      <base-badge
+        v-for="area in areas"
+        :key="area"
+        :type="area"
+        :title="area"
+      ></base-badge>
     </div>
     <div class="actions">
-      <RouterLink :to="coachContactLink">Conatct</RouterLink>
-      <RouterLink :to="coachDetailsLink">View Details</RouterLink>
+      <base-button mode="outline" link :to="coachContactLink"
+        >Conatct</base-button
+      >
+      <base-button link :to="coachDetailsLink">View Details</base-button>
     </div>
   </li>
 </template>
